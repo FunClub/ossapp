@@ -1,0 +1,47 @@
+<main class="home-main">
+  <div class="header">
+    <div class="header-left">
+      OnlineStudy
+      <span class="menu-btn" (click)="navOpened=!navOpened">
+        <i [ngClass]="{'arrow_back_close':!navOpened,'arrow_back_open':navOpened}" class="material-icons">chevron_left</i>
+      </span>
+    </div>
+    <div class="header-right">
+        <div class="alter-item">
+          <input type="text" class="search">
+          <div  class="search-icon-wrapper"> <i class="material-icons">search</i></div>
+        </div>
+        <div class="alter-item">
+          <button md-icon-button><i class="material-icons">email</i></button>
+          <span class="item-count">22</span>
+        </div>
+        <div class="alter-item">
+          <button md-icon-button><i class="material-icons">alarm_on</i></button>
+          <span class="item-count">21</span>
+        </div>
+        <div class="alter-item">
+          <button md-icon-button><i class="material-icons">settings</i></button>
+          <span class="item-count">22</span>
+        </div>
+    </div>
+  </div>
+  <md-sidenav-container  class="sidenav-container">
+    <md-sidenav mode="side" [opened]="navOpened" class="side-nav">
+      <div class="profile-wrapper">
+        <div class="profile-text">
+          <p class="nickname">{{user.nickname}}</p>
+          <p class="profession">{{user.admin?'管理员':'学生'}} v</p>
+        </div>
+        <img class="profile-img" src="https://www.primefaces.org/avalon-ng/assets/layout/images/avatar.png">
+      </div>
+      <div class="menu-wrapper">
+        <app-menu></app-menu>
+      </div>
+    </md-sidenav>
+
+    <div class="home-content">
+        <router-outlet></router-outlet>
+    </div>
+  </md-sidenav-container>
+</main>
+

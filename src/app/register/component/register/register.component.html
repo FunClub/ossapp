@@ -1,0 +1,47 @@
+<main class="register-main">
+  <div class="dialog-title">
+    <i class="material-icons">person</i>用户注册
+    <span (click)="close.click()" class="dialog-close"><i class="material-icons">close</i></span>
+  </div>
+
+  <form class="register-content"  (ngSubmit)="register(close)" [formGroup]="registerForm">
+    <md-radio-group class="sex-radio-group" formControlName="sex">
+      <span class="input-prefix" mdPrefix>性别:</span>
+      <md-radio-button  color="primary" value="男">男</md-radio-button>
+      <md-radio-button  class="man-radio" value="女">女</md-radio-button>
+    </md-radio-group>
+
+    <md-form-field class="register-field">
+      <span class="input-prefix" mdPrefix>账号:</span>
+      <input mdInput placeholder="邮箱格式" formControlName="account">
+      <md-error *ngIf="accountControl.hasError('required')">账号不能为空</md-error>
+      <md-error *ngIf="accountControl.hasError('pattern')">邮箱格式错误</md-error>
+    </md-form-field>
+    <md-form-field class="register-field">
+      <span class="input-prefix" mdPrefix>密码:</span>
+      <input mdInput placeholder="6-9位" type="password" formControlName="password">
+      <md-error *ngIf="passwordControl.hasError('required')">密码不能为空</md-error>
+      <md-error *ngIf="passwordControl.hasError('minlength')">密码过短</md-error>
+      <md-error *ngIf="passwordControl.hasError('maxlength')">密码过长</md-error>
+    </md-form-field>
+    <md-form-field class="register-field">
+      <span class="input-prefix" mdPrefix>姓名:</span>
+      <input mdInput placeholder="2-10个字符" formControlName="nickname">
+      <md-error *ngIf="nicknameControl.hasError('required')">姓名不能为空</md-error>
+      <md-error *ngIf="nicknameControl.hasError('minlength')">姓名过短</md-error>
+      <md-error *ngIf="nicknameControl.hasError('maxlength')">姓名过长</md-error>
+    </md-form-field>
+    <md-form-field class="validate-code-input">
+      <span class="input-prefix" mdPrefix>验证码:</span>
+      <input mdInput formControlName="validate">
+      <md-error *ngIf="validateControl.hasError('required')">
+        验证码不能为空
+      </md-error>
+      <md-error *ngIf="validateControl.hasError('verificationCodeActually')||validateControl.hasError('minlength')||validateControl.hasError('maxlength')">
+        验证码错误
+      </md-error>
+    </md-form-field>  <img class="validate-code-img" [src]="api.VALIDATE_CODEIMG">
+    <button class="register-btn" md-raised-button color="primary" [disabled]="!registerForm.valid">立即注册</button>
+  </form>
+  <button style="display: none" md-dialog-close #close></button>
+</main>

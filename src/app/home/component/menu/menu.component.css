@@ -1,0 +1,89 @@
+.menu-main{
+
+}
+.item,.children-item{
+    padding: 3px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  border-left: solid rgba(0,0,0,0);
+}
+.item,.children-item:focus{
+  outline: none;
+}
+
+.item:hover{
+  background: rgb(242,242,242);
+}
+.children-item-wrapper{
+  display: none;
+}
+
+.children-item .icon{
+  margin-left: 30px;
+  font-size: 22px;
+}
+
+.children-item:hover{
+    background: rgb(242,242,242);
+}
+.icon{
+    color: rgb(120,120,120);
+    margin-left: 10px;
+}
+.label{
+    font-size: 14px;
+    margin-left: 5px;
+}
+.chevron{
+    float: right;
+    font-size: 20px;
+    color: rgb(120,120,120);
+    transform: rotate(-90deg);;
+}
+
+.menu-active{
+  background-color: rgb(242,242,242);
+  border-left: solid;
+  border-left-color: #337ab7;
+  color: #337ab7;
+}
+
+.children-item-active{
+  background-color: rgb(242,242,242);
+  border-left: solid;
+  border-left-color: #337ab7;
+  color: #337ab7;
+  animation:fadeIn forwards 0.3s ;
+  display: block;
+}
+.children-item-wrapper-active{
+  display: block;
+}
+.children-item-active i{
+  color: #337ab7;
+}
+@keyframes fadeIn {
+  0% {
+    transform: translateX(-10px); /*初始状态 透明度为0*/
+  }
+  50% {
+    transform: translateX(5px); /*中间状态 透明度为0*/
+  }
+  100% {
+    transform: translateX(0); /*结尾状态 透明度为1*/
+  }
+}
+.menu-active i{
+  color: #337ab7;
+}
+.menu-active .chevron{
+  animation: navActiveArrow_drop 0.3s;
+  animation-fill-mode:forwards;
+}
+/*激活的导航箭头*/
+@keyframes navActiveArrow_drop {
+  100%{
+    transform:rotate(90deg)
+  }
+}

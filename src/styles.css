@@ -1,0 +1,7 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*ng2toastr*/
+@import "~ng2-toastr/bundles/ng2-toastr.min.css";
+/*引入自定义样式*/
+@import "assets/css/material.css";
+
+@import "assets/css/app.css";
