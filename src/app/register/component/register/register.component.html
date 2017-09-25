@@ -26,7 +26,7 @@
     </md-form-field>
     <md-form-field class="register-field">
       <span class="input-prefix" mdPrefix>姓名:</span>
-      <input mdInput placeholder="2-10个字符" formControlName="nickname">
+      <input mdInput placeholder="2-20个字符" formControlName="nickname">
       <md-error *ngIf="nicknameControl.hasError('required')">姓名不能为空</md-error>
       <md-error *ngIf="nicknameControl.hasError('minlength')">姓名过短</md-error>
       <md-error *ngIf="nicknameControl.hasError('maxlength')">姓名过长</md-error>

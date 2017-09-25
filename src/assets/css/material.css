@@ -80,7 +80,10 @@
   float: right;
   cursor: pointer;
 }
-
+.dialog-close i{
+  color: black;
+  font-size: 22px!important;
+}
 /*material button*/
 .mat-button-wrapper{
   min-width: 20px!important;

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from '../../../home/model/user.model';
-
 @Component({
   selector: 'app-add-paper',
   templateUrl: './add-paper.component.html',
@@ -8,8 +6,8 @@ import { UserModel } from '../../../home/model/user.model';
 })
 export class AddPaperComponent implements OnInit {
 
-  constructor(public user:UserModel) {
-    console.log(this.user);
+  constructor() {
+
    }
 
   ngOnInit() {

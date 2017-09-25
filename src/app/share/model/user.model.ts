@@ -1,8 +1,11 @@
-export class UserModel {
+export interface UserModel{
     id:string;
     nickname:string;
     profile:string;
     sex:string;
     state:boolean;
-    isAdmin:boolean;
+    admin:boolean;
+    account:string;
+    password:string;
+
 }

@@ -1,8 +1,8 @@
-import { UserModel } from './../model/user.model';
 import { HomeApiModel } from './../model/home-api.model';
 import { HttpClient } from '@angular/common/http';
 import { BaseService } from './../../share/service/base.service';
 import { Injectable } from '@angular/core';
+import { UserModel } from '../../share/model/user.model';
 
 @Injectable()
 export class HomeService extends BaseService{

@@ -34,7 +34,7 @@ export class MenuComponent implements OnInit {
       {
         icon:'clear_all',label:'批次管理',link:'batch-management',
         children:[
-          {icon:'add',label:'添加批次',link:'batch-management/add-batch'},
+          {icon:'playlist_add',label:'添加批次',link:'batch-management/add-batch'},
         ]
       }
     ];

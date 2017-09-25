@@ -1,0 +1,11 @@
+.update-batch-main{
+    width: 400px;
+    height: 350px;
+}
+.dialog-title i:first-child{
+    font-size: 26px;
+}
+.update-batch-content{
+    width: 340px;
+    margin: auto;
+}
