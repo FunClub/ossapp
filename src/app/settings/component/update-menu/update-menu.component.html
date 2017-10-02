@@ -1,0 +1,56 @@
+<main class="update-menu-main">
+  <div class="dialog-title">
+    <i class="material-icons">
+      playlist_add
+    </i>添加菜单
+    <span class="dialog-close">
+      <i class="material-icons">close</i>
+    </span>
+  </div>
+  
+  <div  class="update-menu-content">
+    <div class="form-item">
+        <md-select placeholder="菜单类型" [(ngModel)]="insertMenuModel.type" class="full-width-input menu-type">
+            <md-option value="menu">父级菜单</md-option>
+            <md-option value="menuItem">子级菜单</md-option>
+          </md-select>
+    </div>
+    <div class="form-item form-item-sc">
+      <md-form-field class="full-width-input">
+            <span class="input-prefix" mdPrefix>菜单名:</span>
+            <input mdInput [(ngModel)]="insertMenuModel.menuItem.label">
+      </md-form-field>
+    </div>
+    <div class="form-item">
+      <md-form-field class="full-width-input">
+            <span class="input-prefix" mdPrefix>路由:</span>
+            <input mdInput [(ngModel)]="insertMenuModel.menuItem.url">
+      </md-form-field>
+    </div>
+            
+    <div class="form-item form-item-sc">
+      <md-form-field class="full-width-input">
+            <span class="input-prefix" mdPrefix>图标:</span>
+            <input mdInput [(ngModel)]="insertMenuModel.menuItem.icon">
+      </md-form-field>
+    </div>
+    
+    
+    <div class="sm-border-left">选择子菜单</div>
+    <div class="menu-item-list form-item" *ngIf="insertMenuModel.type=='menu'">
+      <table>
+        <tr *ngFor="let item of items" style="border: solid;">
+          <td width="80"><md-checkbox color="primary" class="sm-checkbox"></md-checkbox></td>
+          <td><i class="material-icons">{{item.icon}}</i></td>
+          <td><span class="sub-item-label">{{item.label}}</span></td> 
+        </tr>
+      </table>
+    </div>
+    
+    <div class="form-item form-item-sc">
+        <div class="sm-border-left">已选子菜单</div>
+    </div>
+    <button (click)="insertMenu(close)" md-raised-button class="full-btn" color="primary">添加</button>
+  </div>
+  <button md-dialog-close style="display:none;" #close></button>
+</main>

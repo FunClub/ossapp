@@ -7,7 +7,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AppApiModel } from './model/app-api.model';
 import {HttpClientModule,HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgProgressModule, NgProgressInterceptor } from 'ngx-progressbar';
-import {MdSlideToggleModule} from '@angular/material';
+import { MdSlideToggleModule, MdInputModule, MdTableModule,MdCheckboxModule } from '@angular/material';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -30,7 +31,10 @@ import {MdSlideToggleModule} from '@angular/material';
     ReactiveFormsModule,
     FormsModule,
     NgProgressModule,
-    MdSlideToggleModule
+    MdSlideToggleModule,
+    MdInputModule,
+    MdTableModule,
+    MdCheckboxModule
   ],
   providers:[
     AppApiModel,

@@ -1,38 +1,51 @@
 <main class="main">
-  <div class="top white-box boder-left base-text">
+  <div class="content-top white-box border-left base-text">
     <i class="material-icons">person</i> 学生列表
+    <div class="more-operation">
+      <button md-icon-button  [mdMenuTriggerFor]="menu">
+        <i class="material-icons">list</i>
+        <span class="more-operation-label">更多操作</span>
+      </button>
+      <md-menu #menu="mdMenu" class="custom-md-menu">
+        <button md-menu-item  >
+          <md-slide-toggle [checked]="query.showUnAudit" (change)="showUnAuditStudent($event)">{{query.showUnAudit?'显示未审核学生':'隐藏未审核学生'}}</md-slide-toggle>
+        </button>
+        <button md-menu-item>
+          <i class="material-icons">lock_outline</i>
+          <span>仅情侣可见</span>
+        </button>
+      </md-menu>
+    </div>
+   
   </div>
   <div class="student-list white-box">
-    <md-table #table [dataSource]="dataSource">
+    <md-table #table [dataSource]="dataSource"> 
+          <!-- id Column -->
+        <ng-container mdColumnDef="id">
+          <md-header-cell *mdHeaderCellDef> ID </md-header-cell>
+          <md-cell *mdCellDef="let user"> {{user.id}} </md-cell>
+        </ng-container>
       
-      <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
-      <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
+          <!-- nickname Column -->
+        <ng-container mdColumnDef="nickname">
+          <md-header-cell *mdHeaderCellDef> 姓名 </md-header-cell>
+          <md-cell *mdCellDef="let user"> {{user.nickname}} </md-cell>
+        </ng-container>
       
-          <!-- Position Column -->
-          <ng-container mdColumnDef="position">
-            <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
-            <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+          <!-- sex Column -->
+          <ng-container mdColumnDef="sex">
+            <md-header-cell *mdHeaderCellDef> 性别 </md-header-cell>
+            <md-cell *mdCellDef="let user"> {{user.sex}} </md-cell>
           </ng-container>
       
-          <!-- Name Column -->
-          <ng-container mdColumnDef="name">
-            <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
-            <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+          <!-- state Column -->
+          <ng-container mdColumnDef="state">
+            <md-header-cell *mdHeaderCellDef> 状态 </md-header-cell>
+            <md-cell *mdCellDef="let user"> <md-slide-toggle (change)="stateToggle($event,user)" color="primary" [checked]="user.state">{{user.state?'已激活':'待激活'}}</md-slide-toggle></md-cell>
           </ng-container>
       
-          <!-- Weight Column -->
-          <ng-container mdColumnDef="weight">
-            <md-header-cell *mdHeaderCellDef> Weight </md-header-cell>
-            <md-cell *mdCellDef="let element"> {{element.weight}} </md-cell>
-          </ng-container>
-      
-          <!-- Color Column -->
-          <ng-container mdColumnDef="symbol">
-            <md-header-cell *mdHeaderCellDef> Symbol </md-header-cell>
-            <md-cell *mdCellDef="let element"> {{element.symbol}} </md-cell>
-          </ng-container>
-        </md-table>
+          <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+          <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+    </md-table>
   </div>
 </main>

@@ -1,0 +1,20 @@
+<main class="update-batch-main">
+  <div class="dialog-title">
+    <i class="material-icons">playlist_add</i>添加批次
+    <span class="dialog-close" (click)="close.click()"><i class="material-icons">close</i></span>
+  </div>
+
+  <form class="update-batch-content">
+    <md-form-field class="full-width-input">
+      <span class="input-prefix" mdPrefix>批次名:</span>
+      <input mdInput>
+    </md-form-field>
+    <md-form-field class="full-width-input">
+      <span class="input-prefix" mdPrefix>考核学分:</span>
+      <input mdInput>
+    </md-form-field>
+    <button md-raised-button class="add-batch-btn" color="primary">添加</button>
+  </form>
+  
+  <button md-dialog-close #close style="display:none"></button>
+</main>

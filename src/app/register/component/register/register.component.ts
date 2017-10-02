@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
       "sex":["男",[],[]],
       "account":["",[Validators.required, Validators.pattern(this.EMAIL_REGEX)],[]],
       "password":["",[Validators.required, Validators.minLength(6),Validators.maxLength(9)],[]],
-      "nickname":["",[Validators.required, Validators.minLength(2),Validators.maxLength(10)],[]],
+      "nickname":["",[Validators.required, Validators.minLength(2),Validators.maxLength(20)],[]],
       "validate":["",[Validators.required,Validators.minLength(4),Validators.maxLength(4)],[(control: FormControl) => {return this.actualVerificationCodeValidator(control, this.registerService)}]]
     });
     this.accountControl = this.registerForm.get("account") as FormControl;

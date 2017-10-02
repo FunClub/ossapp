@@ -1,4 +1,3 @@
-import { UserModel } from './model/user.model';
 import { HomeGuard } from './home-guard';
 import { HomeService } from './service/home.service';
 import { ShareModule } from './../share/share.module';

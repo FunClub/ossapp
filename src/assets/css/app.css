@@ -2,9 +2,28 @@
   padding: 0;
   margin: 0;
 }
+
+.full-btn{
+  width: 100%;
+}
+.full-width-input{
+  width: 100%;
+}
+.content-top-right{
+  float: right;
+  margin-right: 60px;
+  position: relative;
+  bottom: 8px;
+}
+.content-top{
+  padding: 7px;
+}
+.content-top i{
+  font-size: 24px;
+}
 .base-text{
   font-size: 14px;
-  color: rgb(100,100,100)
+  color: rgb(100,100,100);
 }
 /*Box*/
 .white-box{
@@ -13,9 +32,14 @@
   background: white;
   border-radius: 3px;
 }
-.boder-left{
+.border-left{
   border-left: solid rgb(68,138,212);
   padding: 7px;
+}
+.sm-border-left{
+  border-left: solid rgb(68,138,212);
+  padding: 3px;
+  font-size: 13px;
 }
 .item-count{
   background: #3eb839;

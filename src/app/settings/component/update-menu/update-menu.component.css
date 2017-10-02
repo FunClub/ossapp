@@ -1,0 +1,40 @@
+.update-menu-main{
+    width: 800px;
+    max-height: 550px;
+    padding-bottom: 30px;
+}
+.dialog-title i:first-child{
+    font-size: 26px;
+}
+.update-menu-content{
+    width: 90%;
+    margin: auto;
+}
+.full-btn{
+    margin-top: 10px;
+}
+.menu-type{
+    margin-bottom: 10px;
+}
+.menu-item-list{
+    max-height: 200px;
+    overflow-y: auto;
+}
+.sub-item-label{
+    font-size: 13px;
+    color: rgb(100,100,100);
+    max-width: 150px;
+    display: inline-block;
+}
+.menu-item-list table{
+    width: 100%;
+    margin-top: 10px;
+}
+.form-item{
+    display: inline-block;
+    width: 335px;
+    vertical-align: top;
+}
+.form-item-sc{
+    margin-left:40px;
+}

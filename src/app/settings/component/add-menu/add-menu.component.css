@@ -1,9 +1,8 @@
-.add-batch-main{
-    width: 80%;
+.add-menu-main{
+    width: 95%;
     margin: auto;
 }
-.batch-content{
+.menu-list-content{
     margin-top: 20px;
     height: 500px;
 }
-
