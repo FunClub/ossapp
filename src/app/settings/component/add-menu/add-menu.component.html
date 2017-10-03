@@ -1,38 +1,37 @@
 <main class="add-menu-main">
   <div class="content-top white-box border-left base-text">
-    <i class="material-icons">format_list_bulleted</i>
-    菜单列表
+    <i class="material-icons">format_list_bulleted</i> 菜单列表
     <div class="content-top-right">
-      <button  md-icon-button (click)="openAddMenu()"><i class="material-icons">add_circle_outline</i>添加菜单</button>   
+      <button md-icon-button (click)="openAddMenu()"><i class="material-icons">add_circle_outline</i>添加菜单</button>
     </div>
   </div>
   <div class="white-box menu-list-content">
 
-              <md-table #table [dataSource]="subDataSource"> 
-                  <!-- id Column -->
-                <ng-container mdColumnDef="icon">
-                  <md-header-cell *mdHeaderCellDef> 图标 </md-header-cell>
-                  <md-cell *mdCellDef="let item"><i class="material-icons" style="font-size: 30px;">{{item.icon}}</i></md-cell>
-                </ng-container>
-              
-                  <!-- nickname Column -->
-                <ng-container mdColumnDef="label">
-                  <md-header-cell *mdHeaderCellDef> 标签 </md-header-cell>
-                  <md-cell *mdCellDef="let item"> {{item.label}} </md-cell>
-                </ng-container>
-                  <!-- sex Column -->
-                  <ng-container mdColumnDef="url">
-                    <md-header-cell *mdHeaderCellDef> 路由 </md-header-cell>
-                    <md-cell *mdCellDef="let item"> {{item.url}} </md-cell>
-                  </ng-container>
-                  <ng-container mdColumnDef="operation">
-                    <md-header-cell *mdHeaderCellDef> 操作 </md-header-cell>
-                    <md-cell *mdCellDef="let item">
-                        <button md-raised-button class="sm-btn"  color="primary">查看</button>
-                    </md-cell>
-                  </ng-container>
-                  <md-header-row *mdHeaderRowDef="displayedSubColumns"></md-header-row>
-                  <md-row *mdRowDef="let row; columns: displayedSubColumns;"></md-row>
-            </md-table>
+    <md-table #table [dataSource]="subDataSource">
+      <!-- id Column -->
+      <ng-container mdColumnDef="icon">
+        <md-header-cell *mdHeaderCellDef> 图标 </md-header-cell>
+        <md-cell *mdCellDef="let item"><i class="material-icons" style="font-size: 30px;">{{item.icon}}</i></md-cell>
+      </ng-container>
+
+      <!-- nickname Column -->
+      <ng-container mdColumnDef="label">
+        <md-header-cell *mdHeaderCellDef> 标签 </md-header-cell>
+        <md-cell *mdCellDef="let item"> {{item.label}} </md-cell>
+      </ng-container>
+      <!-- sex Column -->
+      <ng-container mdColumnDef="url">
+        <md-header-cell *mdHeaderCellDef> 路由 </md-header-cell>
+        <md-cell *mdCellDef="let item"> {{item.url}} </md-cell>
+      </ng-container>
+      <ng-container mdColumnDef="operation">
+        <md-header-cell *mdHeaderCellDef> 操作 </md-header-cell>
+        <md-cell *mdCellDef="let item">
+          <button md-raised-button class="sm-btn" color="primary">查看</button>
+        </md-cell>
+      </ng-container>
+      <md-header-row *mdHeaderRowDef="displayedSubColumns"></md-header-row>
+      <md-row *mdRowDef="let row; columns: displayedSubColumns;"></md-row>
+    </md-table>
   </div>
 </main>

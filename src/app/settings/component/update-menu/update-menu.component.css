@@ -16,10 +16,7 @@
 .menu-type{
     margin-bottom: 10px;
 }
-.menu-item-list{
-    max-height: 200px;
-    overflow-y: auto;
-}
+
 .sub-item-label{
     font-size: 13px;
     color: rgb(100,100,100);
@@ -29,6 +26,8 @@
 .menu-item-list table{
     width: 100%;
     margin-top: 10px;
+    
+    max-height: 200px;  
 }
 .form-item{
     display: inline-block;
