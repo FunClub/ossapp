@@ -8,22 +8,25 @@
   <div class="white-box menu-list-content">
 
     <md-table #table [dataSource]="subDataSource">
-      <!-- id Column -->
+      <ng-container mdColumnDef="checked">
+        <md-header-cell *mdHeaderCellDef> 勾选 </md-header-cell>
+        <md-cell *mdCellDef="let item"><md-checkbox color="primary" class="sm-checkbox"></md-checkbox></md-cell>
+      </ng-container>
       <ng-container mdColumnDef="icon">
         <md-header-cell *mdHeaderCellDef> 图标 </md-header-cell>
         <md-cell *mdCellDef="let item"><i class="material-icons" style="font-size: 30px;">{{item.icon}}</i></md-cell>
       </ng-container>
 
-      <!-- nickname Column -->
       <ng-container mdColumnDef="label">
         <md-header-cell *mdHeaderCellDef> 标签 </md-header-cell>
         <md-cell *mdCellDef="let item"> {{item.label}} </md-cell>
       </ng-container>
-      <!-- sex Column -->
+
       <ng-container mdColumnDef="url">
         <md-header-cell *mdHeaderCellDef> 路由 </md-header-cell>
         <md-cell *mdCellDef="let item"> {{item.url}} </md-cell>
       </ng-container>
+
       <ng-container mdColumnDef="operation">
         <md-header-cell *mdHeaderCellDef> 操作 </md-header-cell>
         <md-cell *mdCellDef="let item">

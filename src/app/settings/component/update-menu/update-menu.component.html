@@ -39,18 +39,29 @@
       <div class="form-item">
           <div class="sm-border-left">选择子菜单</div>
           <table class="form-item">
-            <tr *ngFor="let item of items" style="border: solid;">
-              <td width="80"><md-checkbox color="primary" class="sm-checkbox"></md-checkbox></td>
-              <td><i class="material-icons">{{item.icon}}</i></td>
-              <td><span class="sub-item-label">{{item.label}}</span></td> 
+            <tr *ngFor="let item of items">
+              <td width="30"><md-checkbox (change)="checkMenuItem($event,item)" color="primary" class="sm-checkbox"></md-checkbox></td>
+              <td width="30"><i class="material-icons">{{item.icon}}</i></td>
+              <td width="70"><span class="sub-item-label">{{item.label}}</span></td>
+              <td><span class="sub-item-label">{{item.url}}</span></td> 
             </tr>
           </table>
       </div>
       <div class="form-item form-item-sc">
           <div class="sm-border-left">已选子菜单</div>
+          <div *ngIf="checkedMenuItems.length==0" class="none-checked-label base-text">还未选择任何子菜单！</div>
+          <table class="form-item">
+            <tr  *ngFor="let item of checkedMenuItems">
+              <td width="30"><i class="material-icons">{{item.icon}}</i></td>
+              <td ><span class="sub-item-label">{{item.label}}</span></td> 
+            </tr>
+          </table>
       </div>
     </div>
-    <button (click)="insertMenu(close)" md-raised-button class="full-btn" color="primary">添加</button>
+   
+  </div>
+  <div class="dialog-bottom">
+    <button (click)="insertMenu(close)" md-raised-button class="sm-btn" color="primary">添加</button>
   </div>
   <button md-dialog-close style="display:none;" #close></button>
 </main>

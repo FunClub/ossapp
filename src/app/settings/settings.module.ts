@@ -7,14 +7,14 @@ import { SettingsComponent } from './component/settings/settings.component';
 import {MdSelectModule,MdTabsModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { DragulaModule } from 'ng2-dragula';
 @NgModule({
   imports: [
     CommonModule,
     ShareModule,
     MdSelectModule,
-    MdTabsModule
+    MdTabsModule,
+    DragulaModule
   ],
   entryComponents:[
     UpdateMenuComponent
