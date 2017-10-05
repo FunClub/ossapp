@@ -1,7 +1,6 @@
 import { ToastsManager } from 'ng2-toastr';
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators,ValidationErrors} from "@angular/forms";
-import { AppApiModel } from '../../../share/model/app-api.model';
 import { RegisterService } from '../../service/register.service';
 import {Observable} from "rxjs";
 import {RegisterApiModel} from "../../model/register-api.model";
@@ -22,7 +21,7 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,private api:RegisterApiModel,private registerService:RegisterService
   ,private toastsManager:ToastsManager
   ) {
-    
+
   }
 
   ngOnInit() {

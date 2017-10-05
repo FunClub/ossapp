@@ -1,12 +1,12 @@
 <main class="menu-main">
   <div class="item-wrapper"  *ngFor="let menu of menus">
-      <button md-button class="item"  [routerLink]="menu.link" routerLinkActive="menu-active">
+      <button mat-button class="item"  [routerLink]="menu.link" routerLinkActive="menu-active">
         <i class="material-icons icon">{{menu.icon}}</i>
         <span class="label">{{menu.label}}</span>
         <i class="material-icons chevron">chevron_left</i>
       </button>
     <div routerLinkActive="children-item-wrapper-active" class="children-item-wrapper">
-      <button md-button class="children-item" *ngFor="let children of menu.children" [routerLink]="children.link" routerLinkActive="children-item-active">
+      <button mat-button class="children-item" *ngFor="let children of menu.children" [routerLink]="children.link" routerLinkActive="children-item-active">
         <i class="material-icons icon">{{children.icon}}</i>
         <span class="label">{{children.label}}</span>
       </button>

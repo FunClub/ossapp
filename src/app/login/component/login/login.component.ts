@@ -1,11 +1,10 @@
-import { RegisterService } from './../../../register/service/register.service';
 import { FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { ToastsManager } from 'ng2-toastr';
 import { Component, OnInit } from '@angular/core';
 import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
-import {MdDialog} from "@angular/material";
+import {MatDialog} from "@angular/material";
 import {RegisterComponent} from "../../../register/component/register/register.component";
 import { LoginService } from '../../service/login.service';
 import { Router } from '@angular/router';
@@ -45,7 +44,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   public loginForm:FormGroup;
   public isAdmin:boolean;
-  constructor(private dialog:MdDialog,private toastsManager:ToastsManager,private formBuilder:FormBuilder,
+  constructor(private dialog:MatDialog,private toastsManager:ToastsManager,private formBuilder:FormBuilder,
   private loginService:LoginService,private router:Router
   ) {
    this.isAdmin =false;
@@ -56,7 +55,7 @@ export class LoginComponent implements OnInit {
       "account":[""],
       "password":[""],
     });
-   
+
   }
   adminToggle(event){
     this.isAdmin = event.source.checked;

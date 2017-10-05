@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {LoginModule} from "./login/login.module";
 import {ShareModule} from "./share/share.module";
-import {MD_PLACEHOLDER_GLOBAL_OPTIONS} from "@angular/material";
+import {MAT_PLACEHOLDER_GLOBAL_OPTIONS} from "@angular/material";
 import {RegisterModule} from "./register/register.module";
 import { HomeModule } from './home/home.module';
 import {StudentManagementModule} from "./stuent-management/student-management.module";
@@ -34,7 +34,7 @@ import {ToastOptions,ToastModule} from "ng2-toastr";
   providers: [
     /*弹出框全局配置*/
     {provide:ToastOptions,useClass:BaseToastsOptions},
-    {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: {float: 'never'}}
+    {provide: MAT_PLACEHOLDER_GLOBAL_OPTIONS, useValue: {float: 'never'}}
   ],
   bootstrap: [AppComponent]
 })

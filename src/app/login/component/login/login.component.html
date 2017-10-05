@@ -6,16 +6,16 @@
       <p class="welcome-label">欢迎来到在线学习系统</p>
     </div>
     <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
-      <md-form-field  class="login-field">
-        <span class="input-prefix" mdPrefix>账号:</span>
-        <input mdInput name="account" formControlName="account">
-      </md-form-field>
-      <md-form-field  class="login-field">
-        <span class="input-prefix" mdPrefix>密码:</span>
-        <input type="password" mdInput formControlName="password">
-      </md-form-field>
-      <md-checkbox class="sm-checkbox" (change)="adminToggle($event)" color="primary">我是管理员</md-checkbox>
-      <button md-raised-button  class="app-base-button login-button" color="primary"><i class="material-icons login-icon">person</i>登录</button>
+      <mat-form-field  class="login-field">
+        <span class="input-prefix" matPrefix>账号:</span>
+        <input matInput name="account" formControlName="account">
+      </mat-form-field>
+      <mat-form-field  class="login-field">
+        <span class="input-prefix" matPrefix>密码:</span>
+        <input type="password" matInput formControlName="password">
+      </mat-form-field>
+      <mat-checkbox class="sm-checkbox" (change)="adminToggle($event)" color="primary">我是管理员</mat-checkbox>
+      <button mat-raised-button  class="app-base-button login-button" color="primary"><i class="material-icons login-icon">person</i>登录</button>
       <p class="register-tip">没有账号？<span (click)="openRegisterDialog()" class="just-register-label">立即注册</span></p>
     </form>
 

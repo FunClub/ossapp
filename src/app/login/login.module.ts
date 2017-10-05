@@ -4,15 +4,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './component/login/login.component';
-import { MdInputModule, MdCheckboxModule } from "@angular/material";
+import { MatInputModule, MatCheckboxModule } from "@angular/material";
 import {ShareModule} from "../share/share.module";
 
 @NgModule({
   imports: [
     CommonModule,
-    MdInputModule,
+    MatInputModule,
     ShareModule,
-    MdCheckboxModule
+    MatCheckboxModule
   ],
   providers:[
     LoginApiModel,

@@ -6,44 +6,44 @@
     <span class="dialog-close" (click)="close.click()">
       <i class="material-icons">close</i>
     </span>
-  </div> 
-  
+  </div>
+
   <div  class="update-menu-content">
     <div class="form-item">
-        <md-select placeholder="菜单类型" [(ngModel)]="insertMenuModel.type" class="full-width-input menu-type">
-            <md-option value="menu">父级菜单</md-option>
-            <md-option value="menuItem">子级菜单</md-option>
-        </md-select>
+        <mat-select placeholder="菜单类型" [(ngModel)]="insertMenuModel.type" class="full-width-input menu-type">
+            <mat-option value="menu">父级菜单</mat-option>
+            <mat-option value="menuItem">子级菜单</mat-option>
+        </mat-select>
     </div>
     <div class="form-item form-item-sc">
-      <md-form-field class="full-width-input">
-            <span class="input-prefix" mdPrefix>菜单名:</span>
-            <input mdInput [(ngModel)]="insertMenuModel.menuItem.label">
-      </md-form-field>
+      <mat-form-field class="full-width-input">
+            <span class="input-prefix" matPrefix>菜单名:</span>
+            <input matInput [(ngModel)]="insertMenuModel.menuItem.label">
+      </mat-form-field>
     </div>
     <div class="form-item">
-      <md-form-field class="full-width-input">
-            <span class="input-prefix" mdPrefix>路由:</span>
-            <input mdInput [(ngModel)]="insertMenuModel.menuItem.url">
-      </md-form-field>
+      <mat-form-field class="full-width-input">
+            <span class="input-prefix" matPrefix>路由:</span>
+            <input matInput [(ngModel)]="insertMenuModel.menuItem.url">
+      </mat-form-field>
     </div>
-            
+
     <div class="form-item form-item-sc">
-      <md-form-field class="full-width-input">
-            <span class="input-prefix" mdPrefix>图标:</span>
-            <input mdInput [(ngModel)]="insertMenuModel.menuItem.icon">
-      </md-form-field>
+      <mat-form-field class="full-width-input">
+            <span class="input-prefix" matPrefix>图标:</span>
+            <input matInput [(ngModel)]="insertMenuModel.menuItem.icon">
+      </mat-form-field>
     </div>
-    
+
     <div class="menu-item-list" *ngIf="insertMenuModel.type=='menu'">
       <div class="form-item">
           <div class="sm-border-left">选择子菜单</div>
           <table class="form-item">
             <tr *ngFor="let item of items">
-              <td width="30"><md-checkbox (change)="checkMenuItem($event,item)" color="primary" class="sm-checkbox"></md-checkbox></td>
+              <td width="30"><mat-checkbox (change)="checkMenuItem($event,item)" color="primary" class="sm-checkbox"></mat-checkbox></td>
               <td width="30"><i class="material-icons">{{item.icon}}</i></td>
               <td width="70"><span class="sub-item-label">{{item.label}}</span></td>
-              <td><span class="sub-item-label">{{item.url}}</span></td> 
+              <td><span class="sub-item-label">{{item.url}}</span></td>
             </tr>
           </table>
       </div>
@@ -53,15 +53,15 @@
           <table class="form-item">
             <tr  *ngFor="let item of checkedMenuItems">
               <td width="30"><i class="material-icons">{{item.icon}}</i></td>
-              <td ><span class="sub-item-label">{{item.label}}</span></td> 
+              <td ><span class="sub-item-label">{{item.label}}</span></td>
             </tr>
           </table>
       </div>
     </div>
-   
+
   </div>
   <div class="dialog-bottom">
-    <button (click)="insertMenu(close)" md-raised-button class="sm-btn" color="primary">添加</button>
+    <button (click)="insertMenu(close)" mat-raised-button class="sm-btn" color="primary">添加</button>
   </div>
-  <button md-dialog-close style="display:none;" #close></button>
+  <button mat-dialog-close style="display:none;" #close></button>
 </main>

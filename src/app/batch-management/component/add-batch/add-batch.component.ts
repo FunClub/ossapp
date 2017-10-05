@@ -1,4 +1,4 @@
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
 import { UpdateBatchComponent } from '../update-batch/update-batch.component';
 
@@ -9,7 +9,7 @@ import { UpdateBatchComponent } from '../update-batch/update-batch.component';
 })
 export class AddBatchComponent implements OnInit {
 
-  constructor(private dialog:MdDialog) { }
+  constructor(private dialog:MatDialog) { }
 
   ngOnInit() {
   }

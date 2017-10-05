@@ -2,39 +2,39 @@
   <div class="content-top white-box border-left base-text">
     <i class="material-icons">format_list_bulleted</i> 菜单列表
     <div class="content-top-right">
-      <button md-icon-button (click)="openAddMenu()"><i class="material-icons">add_circle_outline</i>添加菜单</button>
+      <button mat-icon-button (click)="openAddMenu()"><i class="material-icons">add_circle_outline</i>添加菜单</button>
     </div>
   </div>
   <div class="white-box menu-list-content">
 
-    <md-table #table [dataSource]="subDataSource">
-      <ng-container mdColumnDef="checked">
-        <md-header-cell *mdHeaderCellDef> 勾选 </md-header-cell>
-        <md-cell *mdCellDef="let item"><md-checkbox color="primary" class="sm-checkbox"></md-checkbox></md-cell>
+    <mat-table #table [dataSource]="subDataSource">
+      <ng-container matColumnDef="checked">
+        <mat-header-cell *matHeaderCellDef> 勾选 </mat-header-cell>
+        <mat-cell *matCellDef="let item"><mat-checkbox color="primary" class="sm-checkbox"></mat-checkbox></mat-cell>
       </ng-container>
-      <ng-container mdColumnDef="icon">
-        <md-header-cell *mdHeaderCellDef> 图标 </md-header-cell>
-        <md-cell *mdCellDef="let item"><i class="material-icons" style="font-size: 30px;">{{item.icon}}</i></md-cell>
-      </ng-container>
-
-      <ng-container mdColumnDef="label">
-        <md-header-cell *mdHeaderCellDef> 标签 </md-header-cell>
-        <md-cell *mdCellDef="let item"> {{item.label}} </md-cell>
+      <ng-container matColumnDef="icon">
+        <mat-header-cell *matHeaderCellDef> 图标 </mat-header-cell>
+        <mat-cell *matCellDef="let item"><i class="material-icons" style="font-size: 30px;">{{item.icon}}</i></mat-cell>
       </ng-container>
 
-      <ng-container mdColumnDef="url">
-        <md-header-cell *mdHeaderCellDef> 路由 </md-header-cell>
-        <md-cell *mdCellDef="let item"> {{item.url}} </md-cell>
+      <ng-container matColumnDef="label">
+        <mat-header-cell *matHeaderCellDef> 标签 </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.label}} </mat-cell>
       </ng-container>
 
-      <ng-container mdColumnDef="operation">
-        <md-header-cell *mdHeaderCellDef> 操作 </md-header-cell>
-        <md-cell *mdCellDef="let item">
-          <button md-raised-button class="sm-btn" color="primary">查看</button>
-        </md-cell>
+      <ng-container matColumnDef="url">
+        <mat-header-cell *matHeaderCellDef> 路由 </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.url}} </mat-cell>
       </ng-container>
-      <md-header-row *mdHeaderRowDef="displayedSubColumns"></md-header-row>
-      <md-row *mdRowDef="let row; columns: displayedSubColumns;"></md-row>
-    </md-table>
+
+      <ng-container matColumnDef="operation">
+        <mat-header-cell *matHeaderCellDef> 操作 </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+          <button mat-raised-button class="sm-btn" color="primary">查看</button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedSubColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedSubColumns;"></mat-row>
+    </mat-table>
   </div>
 </main>

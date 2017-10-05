@@ -2,50 +2,50 @@
   <div class="content-top white-box border-left base-text">
     <i class="material-icons">person</i> 学生列表
     <div class="more-operation">
-      <button md-icon-button  [mdMenuTriggerFor]="menu">
+      <button mat-icon-button  [matMenuTriggerFor]="menu">
         <i class="material-icons">list</i>
         <span class="more-operation-label">更多操作</span>
       </button>
-      <md-menu #menu="mdMenu" class="custom-md-menu">
-        <button md-menu-item  >
-          <md-slide-toggle [checked]="query.showUnAudit" (change)="showUnAuditStudent($event)">{{query.showUnAudit?'显示未审核学生':'隐藏未审核学生'}}</md-slide-toggle>
+      <mat-menu #menu="matMenu" class="custom-mat-menu">
+        <button mat-menu-item  >
+          <mat-slide-toggle [checked]="query.showUnAudit" (change)="showUnAuditStudent($event)">{{query.showUnAudit?'显示未审核学生':'隐藏未审核学生'}}</mat-slide-toggle>
         </button>
-        <button md-menu-item>
+        <button mat-menu-item>
           <i class="material-icons">lock_outline</i>
           <span>仅情侣可见</span>
         </button>
-      </md-menu>
+      </mat-menu>
     </div>
-   
+
   </div>
   <div class="student-list white-box">
-    <md-table #table [dataSource]="dataSource"> 
+    <mat-table #table [dataSource]="dataSource">
           <!-- id Column -->
-        <ng-container mdColumnDef="id">
-          <md-header-cell *mdHeaderCellDef> ID </md-header-cell>
-          <md-cell *mdCellDef="let user"> {{user.id}} </md-cell>
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
         </ng-container>
-      
+
           <!-- nickname Column -->
-        <ng-container mdColumnDef="nickname">
-          <md-header-cell *mdHeaderCellDef> 姓名 </md-header-cell>
-          <md-cell *mdCellDef="let user"> {{user.nickname}} </md-cell>
+        <ng-container matColumnDef="nickname">
+          <mat-header-cell *matHeaderCellDef> 姓名 </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.nickname}} </mat-cell>
         </ng-container>
-      
+
           <!-- sex Column -->
-          <ng-container mdColumnDef="sex">
-            <md-header-cell *mdHeaderCellDef> 性别 </md-header-cell>
-            <md-cell *mdCellDef="let user"> {{user.sex}} </md-cell>
+          <ng-container matColumnDef="sex">
+            <mat-header-cell *matHeaderCellDef> 性别 </mat-header-cell>
+            <mat-cell *matCellDef="let user"> {{user.sex}} </mat-cell>
           </ng-container>
-      
+
           <!-- state Column -->
-          <ng-container mdColumnDef="state">
-            <md-header-cell *mdHeaderCellDef> 状态 </md-header-cell>
-            <md-cell *mdCellDef="let user"> <md-slide-toggle (change)="stateToggle($event,user)" color="primary" [checked]="user.state">{{user.state?'已激活':'待激活'}}</md-slide-toggle></md-cell>
+          <ng-container matColumnDef="state">
+            <mat-header-cell *matHeaderCellDef> 状态 </mat-header-cell>
+            <mat-cell *matCellDef="let user"> <mat-slide-toggle (change)="stateToggle($event,user)" color="primary" [checked]="user.state">{{user.state?'已激活':'待激活'}}</mat-slide-toggle></mat-cell>
           </ng-container>
-      
-          <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
-          <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
-    </md-table>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
   </div>
 </main>

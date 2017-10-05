@@ -12,21 +12,21 @@
           <div  class="search-icon-wrapper"> <i class="material-icons">search</i></div>
         </div>
         <div class="alter-item">
-          <button md-icon-button><i class="material-icons">email</i></button>
+          <button mat-icon-button><i class="material-icons">email</i></button>
           <span class="item-count">22</span>
         </div>
         <div class="alter-item">
-          <button md-icon-button><i class="material-icons">alarm_on</i></button>
+          <button mat-icon-button><i class="material-icons">alarm_on</i></button>
           <span class="item-count">21</span>
         </div>
         <div class="alter-item">
-          <button md-icon-button><i class="material-icons">settings</i></button>
+          <button mat-icon-button><i class="material-icons">settings</i></button>
           <span class="item-count">22</span>
         </div>
     </div>
   </div>
-  <md-sidenav-container  class="sidenav-container">
-    <md-sidenav mode="side" [opened]="navOpened" class="side-nav">
+  <mat-sidenav-container  class="sidenav-container">
+    <mat-sidenav mode="side" [opened]="navOpened" class="side-nav">
       <div class="profile-wrapper">
         <div class="profile-text">
           <p class="nickname">{{user.nickname}}</p>
@@ -37,11 +37,11 @@
       <div class="menu-wrapper">
         <app-menu></app-menu>
       </div>
-    </md-sidenav>
+    </mat-sidenav>
 
     <div class="home-content">
         <router-outlet></router-outlet>
     </div>
-  </md-sidenav-container>
+  </mat-sidenav-container>
 </main>
 
