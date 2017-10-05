@@ -1,3 +1,4 @@
+
 export class MenuItemModel{
     id:string;
     label:string;
@@ -11,14 +12,11 @@ export class ShowMenuModel extends MenuItemModel{
     items:MenuItemModel[];
 }
 
-export class InsertMenuModel{
-    type:string;
-    menuItem:MenuItemModel;
-    menu:MenuModel;
+export class MenuDialogArgs{
+    targetIsAdd:boolean;
+    isUpdated:boolean;
+    menu:ShowMenuModel;
     constructor(){
-        this.menu = new MenuModel();
-        this.menuItem = new MenuItemModel();
-        this.type="menu";
+        this.isUpdated=false;
     }
 }
-

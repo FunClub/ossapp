@@ -5,3 +5,7 @@
 @import "assets/css/material.css";
 
 @import "assets/css/app.css";
+
+@import "~dragula/dist/dragula.min.css";
+
+@import "~angular2-busy/build/style/busy.css"

@@ -17,12 +17,6 @@
     margin-bottom: 10px;
 }
 
-.sub-item-label{
-    font-size: 13px;
-    color: rgb(100,100,100);
-    max-width: 150px;
-    display: inline-block;
-}
 table{
     width: 100%;
     margin-top: 10px;
@@ -40,4 +34,22 @@ table{
 .none-checked-label{
     margin-left: 10px;
     margin-top: 20px;
+}
+.prepare-item span{
+    font-size: 13px;
+    color: rgb(100,100,100);
+    margin-left: 10px;
+}
+.prepare-item{
+    border-bottom: dashed 1px rgb(213,213,213);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.menu-item-list .form-item{
+    min-height: 50px;
+    margin-top: 20px;
+}
+.prepare-item{
+    cursor: move;
 }

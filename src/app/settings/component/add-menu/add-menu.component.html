@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="white-box menu-list-content">
-
+    <app-busy [busy]="busy" [msg]="'数据加载中'"></app-busy>
     <mat-table #table [dataSource]="subDataSource">
       <ng-container matColumnDef="checked">
         <mat-header-cell *matHeaderCellDef> 勾选 </mat-header-cell>
@@ -24,7 +24,7 @@
 
       <ng-container matColumnDef="url">
         <mat-header-cell *matHeaderCellDef> 路由 </mat-header-cell>
-        <mat-cell *matCellDef="let item"> {{item.url}} </mat-cell>
+        <mat-cell *matCellDef="let item"> <span class="menu-url" style="width: 150px;"> {{item.url|appMenuUrl}} </span></mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="operation">

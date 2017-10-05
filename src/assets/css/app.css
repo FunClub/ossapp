@@ -2,6 +2,12 @@
   padding: 0;
   margin: 0;
 }
+.menu-url{
+  display: inline-block;
+  width: 220px;
+  overflow: hidden;
+  text-overflow : ellipsis; 
+}
 .dialog-bottom{
   height: 10px;
   border-top:solid 1px rgb(223,223,223);

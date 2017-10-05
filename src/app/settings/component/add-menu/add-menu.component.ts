@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { DataSource } from '@angular/cdk/collections';
-import { MenuItemModel } from './../../model/menu.model';
+import { MenuItemModel, MenuDialogArgs } from './../../model/menu.model';
 import { SettingsService } from './../../service/settings.service';
 import { UpdateMenuComponent } from './../update-menu/update-menu.component';
 import { MatDialog } from '@angular/material';
@@ -15,18 +15,26 @@ export class AddMenuComponent implements OnInit {
   public items:MenuItemModel[];
   public subDataSource:SubDataSource;
   public displayedSubColumns=['checked','icon','label','url','operation'];
+  public busy:any;
   constructor(private dialog:MatDialog,private settingService:SettingsService) {
     this.subDataSource = new SubDataSource(settingService);
    }
 
   ngOnInit() {
-    this.subDataSource.connect().subscribe();
+    this.busy=this.subDataSource.connect().subscribe();
   }
-  private selectMenuItem(){
-    this.settingService.selectMenuItem().subscribe(res=>this.items=res);
-  }
+  
   openAddMenu(){
-    this.dialog.open(UpdateMenuComponent);
+    let args = new MenuDialogArgs();
+    args.targetIsAdd = true;
+    this.dialog.open(UpdateMenuComponent,{
+      data:args
+    }).afterClosed().subscribe(()=>{
+      if(args.isUpdated){
+        this.subDataSource = new SubDataSource(this.settingService);
+        this.busy=this.subDataSource.connect().subscribe();
+      }
+    });
   }
 }
 export class SubDataSource extends DataSource<any> {
