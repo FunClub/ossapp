@@ -1,0 +1,22 @@
+<div class="form-item">
+    <div class="sm-border-left">选择菜单</div>
+    <div *ngIf="menus.length==0" class="none-checked-label base-text">没有可选的子菜单！</div>
+    <div class="form-item" [dragula]='"bag1"' [dragulaModel]="menus">
+      <div class="prepare-item" *ngFor="let item of menus">
+        <span><i class="material-icons">{{item.icon}}</i></span>
+        <span>{{item.label}}</span>
+        <span class="menu-url">{{item.url |appMenuUrl}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-item form-item-sc">
+    <div class="sm-border-left">已选菜单</div>
+    <div *ngIf="checkedMenus.length==0" class="none-checked-label base-text">还未选择任何子菜单！</div>
+    <div class="form-item" [dragula]='"bag1"' [dragulaModel]="checkedMenus">
+      <div class="prepare-item" *ngFor="let item of checkedMenus">
+        <span><i class="material-icons">{{item.icon}}</i></span>
+        <span>{{item.label}}</span>
+        <span class="menu-url">{{item.url |appMenuUrl}}</span>
+      </div>
+    </div>
+  </div>

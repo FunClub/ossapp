@@ -1,3 +1,6 @@
+import { RoleModel } from './../model/role.model';
+import { AppUtil } from './../../share/model/util.model';
+import { element } from 'protractor';
 import { Observable } from 'rxjs/Observable';
 import { SettingsApiModel } from './../model/settings-api.model';
 import { MenuItemModel, MenuModel } from './../model/menu.model';
@@ -10,19 +13,39 @@ import { Injectable } from '@angular/core';
 export class SettingsService extends BaseService{
 
     constructor(protected http:HttpClient,private api:SettingsApiModel) { super(http);}
-    public filterMenuItemId(items:MenuItemModel[]):string[]{
+    public insertRole(role:RoleModel){
+        return this.post(this.api.ROLE,role);
+    }
+    public updateMenu(data:MenuModel){
+        return this.put(this.api.MENU,data);
+    }
+    public filterCheckedItem(items:MenuItemModel[],checkedItem:MenuItemModel[]){
+        let index = [];
+        for(let i=0;i<items.length;i++){
+            checkedItem.forEach(element => {
+                if(items[i].id==element.id){
+                    index.push(items[i].id);
+                }
+            });
+        }
+        index.forEach(element => {
+            AppUtil.removeElementByProp(items,"id",element);
+        });
+    }
+    public filterMenuId(items:MenuItemModel[]):string[]{
         let ids = [];
         items.forEach(element => {
             ids.push(element.id)
         });
+        console.log(items);
         return ids;
     }
     public insertMenuModel(data:MenuModel){
         return this.post(this.api.MENU,data);
     }
 
-    public selectMenuItem():Observable<MenuItemModel[]>{
-        return this.get(this.api.MENU_ITEM).map(res=>res.data);
+    public selectMenu(type:string):Observable<MenuItemModel[]>{
+        return this.get(this.api.SELECT_MENU(type)).map(res=>res.data);
     }
 
 }

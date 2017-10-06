@@ -47,13 +47,13 @@ export class LoginComponent implements OnInit {
   constructor(private dialog:MatDialog,private toastsManager:ToastsManager,private formBuilder:FormBuilder,
   private loginService:LoginService,private router:Router
   ) {
-   this.isAdmin =false;
+   this.isAdmin =true;
   }
 
   ngOnInit() {
     this.loginForm=this.formBuilder.group({
-      "account":[""],
-      "password":[""],
+      "account":["904620272@qq.com"],
+      "password":["123456"],
     });
 
   }

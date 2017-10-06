@@ -1,0 +1,32 @@
+.form-item{
+    display: inline-block;
+    width: 335px;
+    min-height: 30px;
+    margin-top: 10px;
+    vertical-align: top;
+}
+.form-item-sc{
+    margin-left:40px;
+}
+.none-checked-label{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.prepare-item span{
+    font-size: 13px;
+    color: rgb(100,100,100);
+    margin-left: 10px;
+}
+.prepare-item{
+    border-bottom: dashed 1px rgb(213,213,213);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.menu-item-list .form-item{
+    min-height: 50px;
+    margin-top: 20px;
+}
+.prepare-item{
+    cursor: move;
+}

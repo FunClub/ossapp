@@ -40,7 +40,8 @@ export class MenuComponent implements OnInit {
       {
         icon:'settings_applications',label:'系统设置',link:'settings',
         children:[
-          {icon:'playlist_add',label:'添加菜单',link:'settings/add-menu'},
+          {icon:'view_list',label:'菜单管理',link:'settings/menu-management'},
+          {icon:'person',label:'角色管理',link:'settings/role-management'},
         ]
       },
     ];

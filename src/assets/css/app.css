@@ -2,6 +2,14 @@
   padding: 0;
   margin: 0;
 }
+.app-content{
+  margin-top: 20px;
+  position: relative
+}
+.app-main{
+  width: 95%;
+  margin: auto;
+}
 .menu-url{
   display: inline-block;
   width: 220px;
@@ -20,6 +28,9 @@
 }
 .full-width-input{
   width: 100%;
+}
+.full-width-input input{
+  font-size: 13px;
 }
 .content-top-right{
   float: right;

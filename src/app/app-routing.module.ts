@@ -1,5 +1,6 @@
+import { RoleManagementComponent } from './settings/component/role-management/role-management.component';
+import { MenuManagementComponent } from './settings/component/menu-management/menu-management.component';
 import { SettingsComponent } from './settings/component/settings/settings.component';
-import { AddMenuComponent } from './settings/component/add-menu/add-menu.component';
 import { NgModule } from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/component/login/login.component";
@@ -49,8 +50,9 @@ const appRoutes: Routes = [
       },
       {path:'settings',component:SettingsComponent,
         children:[
-          {path:'add-menu',component:AddMenuComponent},
-          {path:'',redirectTo: 'add-menu', pathMatch: 'full'},
+          {path:'menu-management',component:MenuManagementComponent},
+          {path:'role-management',component:RoleManagementComponent},
+          {path:'',redirectTo: 'menu-management', pathMatch: 'full'},
         ]
       }
     ]

@@ -1,8 +1,11 @@
+import { MenuSelectorComponent } from './component/menu-selector/menu-selector.component';
+import { UpdateRoleComponent } from './component/update-role/update-role.component';
+import { RoleManagementComponent } from './component/role-management/role-management.component';
+import { MenuManagementComponent } from './component/menu-management/menu-management.component';
 import { SettingsService } from './service/settings.service';
 import { SettingsApiModel } from './model/settings-api.model';
 import { UpdateMenuComponent } from './component/update-menu/update-menu.component';
 import { ShareModule } from './../share/share.module';
-import { AddMenuComponent } from './component/add-menu/add-menu.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import {MatSelectModule,MatTabsModule} from '@angular/material';
 import { NgModule } from '@angular/core';
@@ -17,9 +20,11 @@ import { DragulaModule } from 'ng2-dragula'
     DragulaModule
   ],
   entryComponents:[
-    UpdateMenuComponent
+    UpdateMenuComponent,UpdateRoleComponent
   ],
-  declarations: [SettingsComponent,AddMenuComponent,UpdateMenuComponent],
+  declarations: [SettingsComponent,MenuManagementComponent,UpdateMenuComponent,RoleManagementComponent,
+  UpdateRoleComponent,MenuSelectorComponent
+  ],
   providers:[
     SettingsApiModel,
     SettingsService

@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AddMenuComponent } from './add-menu.component';
+import { RoleManagementComponent } from './role-management.component';
 
-describe('AddMenuComponent', () => {
-  let component: AddMenuComponent;
-  let fixture: ComponentFixture<AddMenuComponent>;
+describe('RoleManagementComponent', () => {
+  let component: RoleManagementComponent;
+  let fixture: ComponentFixture<RoleManagementComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddMenuComponent ]
+      declarations: [ RoleManagementComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddMenuComponent);
+    fixture = TestBed.createComponent(RoleManagementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

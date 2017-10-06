@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { DataSource } from '@angular/cdk/collections';
-import { MenuItemModel, MenuDialogArgs } from './../../model/menu.model';
+import { MenuItemModel, MenuDialogArgs, ShowMenuModel } from './../../model/menu.model';
 import { SettingsService } from './../../service/settings.service';
 import { UpdateMenuComponent } from './../update-menu/update-menu.component';
 import { MatDialog } from '@angular/material';
@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-add-menu',
-  templateUrl: './add-menu.component.html',
-  styleUrls: ['./add-menu.component.css']
+  templateUrl: './menu-management.component.html',
+  styleUrls: ['./menu-management.component.css']
 })
-export class AddMenuComponent implements OnInit {
+export class MenuManagementComponent implements OnInit {
   public items:MenuItemModel[];
   public subDataSource:SubDataSource;
   public displayedSubColumns=['checked','icon','label','url','operation'];
@@ -23,14 +23,20 @@ export class AddMenuComponent implements OnInit {
   ngOnInit() {
     this.busy=this.subDataSource.connect().subscribe();
   }
-  
-  openAddMenu(){
-    let args = new MenuDialogArgs();
-    args.targetIsAdd = true;
+  updateMenu(menu:ShowMenuModel){
+    let arg = new MenuDialogArgs();
+    arg.targetIsAdd = false;
+    arg.menu = menu;
+    this.openAddMenu(arg);
+  }
+  openAddMenu(arg:MenuDialogArgs){
+    if(!arg){
+      arg = new MenuDialogArgs();
+    }
     this.dialog.open(UpdateMenuComponent,{
-      data:args
+      data:arg
     }).afterClosed().subscribe(()=>{
-      if(args.isUpdated){
+      if(arg.isUpdated){
         this.subDataSource = new SubDataSource(this.settingService);
         this.busy=this.subDataSource.connect().subscribe();
       }
@@ -43,7 +49,7 @@ export class SubDataSource extends DataSource<any> {
     super();
   }
  connect(): Observable<MenuItemModel[]> {
-   return this.service.selectMenuItem();
+   return this.service.selectMenu("all");
  }
 
  disconnect() {}

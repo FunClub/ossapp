@@ -1,5 +1,9 @@
-const PREFIX:string="settings/";
+const SETTINGS_PREFIX:string="settings/";
+const ROLE_PREFIX:string="role/";
 export class SettingsApiModel {
-    MENU:string=PREFIX+"menu";
-    MENU_ITEM:string=PREFIX+"menu-item";
+    ROLE:string=ROLE_PREFIX;
+    MENU:string=SETTINGS_PREFIX+"menu";
+    SELECT_MENU(type:string){
+        return `${SETTINGS_PREFIX}menu/${type}`
+    }
 }
