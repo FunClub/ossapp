@@ -25,7 +25,7 @@ export class UpdateRoleComponent implements OnInit {
     });
   }
 
-  updateRole(close:HTMLButtonElement){
+  insertRole(close:HTMLButtonElement){
     this.updateRoleModel.menuIds = this.settingService.filterMenuId(this.checkedMenuItems);
     this.settingService.insertRole(this.updateRoleModel).subscribe(res=>{
       if(res.data){

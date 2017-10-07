@@ -15,7 +15,7 @@
 .prepare-item span{
     font-size: 13px;
     color: rgb(100,100,100);
-    margin-left: 10px;
+    margin-left: 5px;
 }
 .prepare-item{
     border-bottom: dashed 1px rgb(213,213,213);
@@ -29,4 +29,8 @@
 }
 .prepare-item{
     cursor: move;
+}
+.bag1{
+    max-height: 250px;
+    overflow-y: auto;
 }

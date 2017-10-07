@@ -1,4 +1,4 @@
-import { RoleModel } from './../model/role.model';
+import { RoleModel, ShowRoleModel } from './../model/role.model';
 import { AppUtil } from './../../share/model/util.model';
 import { element } from 'protractor';
 import { Observable } from 'rxjs/Observable';
@@ -13,6 +13,10 @@ import { Injectable } from '@angular/core';
 export class SettingsService extends BaseService{
 
     constructor(protected http:HttpClient,private api:SettingsApiModel) { super(http);}
+
+    public selectRole():Observable<ShowRoleModel[]>{
+        return this.get(this.api.ROLE).map(res=>res.data);
+    }
     public insertRole(role:RoleModel){
         return this.post(this.api.ROLE,role);
     }

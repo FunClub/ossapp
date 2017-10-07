@@ -1,4 +1,4 @@
-import { MenuModel } from './menu.model';
+import { MenuItemModel } from './menu.model';
 export class RoleModel{
     public id:string;
     public name:string;
@@ -10,6 +10,6 @@ export class UpdateRoleModel extends RoleModel{
     
 }
 
-// export class ShowRoleModel extends RoleModel{
-//     public menus:MenuModel[];
-// }
+export class ShowRoleModel extends RoleModel{
+    public menus:MenuItemModel[];
+}

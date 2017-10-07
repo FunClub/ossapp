@@ -14,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
 export class MenuManagementComponent implements OnInit {
   public items:MenuItemModel[];
   public subDataSource:SubDataSource;
-  public displayedSubColumns=['checked','icon','label','url','operation'];
+  public displayedSubColumns=['checked','icon','label','url','type','operation'];
   public busy:any;
   constructor(private dialog:MatDialog,private settingService:SettingsService) {
     this.subDataSource = new SubDataSource(settingService);

@@ -1,7 +1,7 @@
 <div class="form-item">
     <div class="sm-border-left">选择菜单</div>
     <div *ngIf="menus.length==0" class="none-checked-label base-text">没有可选的子菜单！</div>
-    <div class="form-item" [dragula]='"bag1"' [dragulaModel]="menus">
+    <div class="form-item bag1" [dragula]='"bag1"' [dragulaModel]="menus">
       <div class="prepare-item" *ngFor="let item of menus">
         <span><i class="material-icons">{{item.icon}}</i></span>
         <span>{{item.label}}</span>
