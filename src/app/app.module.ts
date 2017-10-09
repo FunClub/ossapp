@@ -13,7 +13,7 @@ import {StudentManagementModule} from "./stuent-management/student-management.mo
 import {CourseManagementModule} from "./course-management/course-management.module";
 import {ExamManagementModule} from "./exam-management/exam-management.module";
 import {BatchManagementModule} from "./batch-management/batch-management.module";
-import {ToastOptions,ToastModule} from "ng2-toastr";
+import {ToastOptions, ToastModule} from "ng2-toastr";
 @NgModule({
   declarations: [
     AppComponent
