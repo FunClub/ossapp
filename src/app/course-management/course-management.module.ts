@@ -10,6 +10,9 @@ import { UpdateCourseComponent } from './component/update-course/update-course.c
     CommonModule,
     ShareModule
   ],
+  entryComponents:[
+    UpdateCourseComponent
+  ],
   declarations: [CourseManagementComponent, AddCourseComponent, UpdateCourseComponent]
 })
 export class CourseManagementModule { }

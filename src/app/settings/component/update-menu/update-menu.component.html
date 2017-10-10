@@ -9,6 +9,7 @@
   </div>
 
   <div class="update-menu-content">
+    <app-busy [busy]="busy" [msg]="'数据传输中...'"></app-busy>
     <div class="form-item">
       <mat-form-field class="full-width-input">
         <mat-select placeholder="菜单类型" [(ngModel)]="updateMenuModel.type" class="full-width-input menu-type">

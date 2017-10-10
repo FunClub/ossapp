@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateCourseComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog:MatDialog) {
+
+  }
 
   ngOnInit() {
   }
+
+ 
 
 }

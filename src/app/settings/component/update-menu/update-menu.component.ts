@@ -15,6 +15,7 @@ export class UpdateMenuComponent implements OnInit {
   public updateMenuModel:UpdateMenuModel;
   public menus:Array<MenuItemModel>;
   public checkedMenuItems:Array<MenuItemModel>;
+  public busy:any;
   constructor(@Inject(MAT_DIALOG_DATA)public arg:MenuDialogArgs, private toasts:ToastsManager,private settingService:SettingsService,
   ) { 
     this.updateMenuModel = new UpdateMenuModel();
@@ -44,7 +45,7 @@ export class UpdateMenuComponent implements OnInit {
   public updateMenu(close:HTMLButtonElement){
     this.filterMenuItemId();
     
-    this.settingService.updateMenu(this.updateMenuModel).subscribe(res=>{
+    this.busy=this.settingService.updateMenu(this.updateMenuModel).subscribe(res=>{
       if(res.data){
         this.toasts.success("更新菜单成功","更新结果");
         this.arg.isUpdated=true;
@@ -61,7 +62,7 @@ export class UpdateMenuComponent implements OnInit {
   }
   public insertMenu(close:HTMLButtonElement){
     this.filterMenuItemId();
-    this.settingService.insertMenuModel(this.updateMenuModel).subscribe(res=>{
+    this.busy=this.settingService.insertMenuModel(this.updateMenuModel).subscribe(res=>{
       if(res.data){
         this.toasts.success("添加菜单成功","添加结果");
         this.arg.isUpdated=true;

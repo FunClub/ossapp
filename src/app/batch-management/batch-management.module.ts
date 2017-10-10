@@ -1,3 +1,5 @@
+import { BatchService } from './service/Batch.service';
+import { BatchApiModel } from './model/batch-api.model';
 import { MatInputModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material';
 import { ShareModule } from '../share/share.module';
@@ -14,6 +16,7 @@ import { UpdateBatchComponent } from './component/update-batch/update-batch.comp
     MatInputModule
   ],
   entryComponents:[UpdateBatchComponent],
+  providers:[BatchApiModel,BatchService],
   declarations: [BatchMenagementComponent, AddBatchComponent,UpdateBatchComponent]
 })
 export class BatchManagementModule { }
