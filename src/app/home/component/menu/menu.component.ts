@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
       {
         icon:'class',label:'课程管理',link:'course-management',
         children:[
-          {icon:'note_add',label:'添加课程',link:'course-management/add-course'},
+          {icon:'note_add',label:'添加课件',link:'course-management/add-course'},
           {icon:'border_color',label:'课程修改',link:'course-management/update-course'}
         ]
       },
@@ -32,9 +32,9 @@ export class MenuComponent implements OnInit {
         ]
       },
       {
-        icon:'clear_all',label:'批次管理',link:'batch-management',
+        icon:'clear_all',label:'学院管理',link:'batch-management',
         children:[
-          {icon:'playlist_add',label:'添加批次',link:'batch-management/add-batch'},
+          {icon:'playlist_add',label:'添加学院',link:'batch-management/add-batch'},
         ]
       },
       {

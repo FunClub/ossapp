@@ -9,6 +9,7 @@
 .update-menu-content{
     width: 90%;
     margin: auto;
+    position: relative;
 }
 .full-btn{
     margin-top: 10px;
