@@ -1,3 +1,4 @@
+import { FileService } from './service/file.service';
 import { BusyComponent } from './component/busy/busy.component';
 import { AppMenuUrlPipe } from './pipe/menu-url.pipe';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -35,6 +36,7 @@ import {BusyModule} from 'angular2-busy';
   ],
   providers:[
     AppApiModel,
+    FileService,
     {provide: HTTP_INTERCEPTORS, useClass: NgProgressInterceptor, multi: true }
   ],
   declarations: [AppMenuUrlPipe,BusyComponent]

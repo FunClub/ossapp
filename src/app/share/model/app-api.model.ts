@@ -1,3 +1,5 @@
+const PREFIX:string="share/"
 export class AppApiModel{
-   IMG_PREFIX="http://taomei1314.com/"
+   File_PREFIX="http://taomei-oss.oss-cn-shenzhen.aliyuncs.com/";
+   UPLOAD_FILES=PREFIX+"files";
 }

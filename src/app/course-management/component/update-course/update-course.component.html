@@ -1,10 +1,39 @@
 <main>
-    <div class="dialog-title">
-        <i class="material-icons">note_add</i>
-        添加课件
-        <span class="dialog-close"><i class="material-icons">close</i></span>
+  <div class="dialog-title">
+    <i class="material-icons">note_add</i> 添加课件
+    <span class="dialog-close"><i class="material-icons">close</i></span>
+  </div>
+  <div class="app-dialog-content">
+    <div class="form-item">
+      <mat-form-field class="full-width-input">
+        <span class="input-prefix" matPrefix>课件名:</span>
+        <input matInput>
+      </mat-form-field>
     </div>
-    <div class="content">
-
+    <div class="form-item sc">
+      <mat-form-field class="full-width-input">
+        <span class="input-prefix" matPrefix>获得:</span>
+        <input matInput>
+        <span matSuffix class="input-suffix">学分</span>
+      </mat-form-field>
     </div>
+    <div class="form-item">
+      <mat-form-field class="full-width-input">
+        <mat-select placeholder="请选择学院">
+          <mat-option *ngFor="let item of batchs" [value]="item.id">
+            <span>{{item.name}}</span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-item sc">
+      <button mat-raised-button class="sm-btn full-btn" (click)="fileInput.click()"><i class="material-icons">cloud_upload</i> 上传视频</button>
+    </div>
+    <video class="video" *ngIf="movieUrl" [src]="movieUrl" controls="controls"></video>
+    <input type="file" style="display: none" #fileInput (change)="uploadFile($event.target.files[0])">
+  </div>
+  <div class="dialog-bottom">
+  <button mat-raised-button color="primary" class="sm-btn">添加</button>
+  
+</div>
 </main>

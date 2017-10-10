@@ -1,3 +1,4 @@
+import { MatSelectModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CourseManagementComponent } from './component/course-management/course-management.component';
@@ -8,7 +9,8 @@ import { UpdateCourseComponent } from './component/update-course/update-course.c
 @NgModule({
   imports: [
     CommonModule,
-    ShareModule
+    ShareModule,
+    MatSelectModule
   ],
   entryComponents:[
     UpdateCourseComponent

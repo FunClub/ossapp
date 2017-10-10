@@ -11,7 +11,7 @@
 /*小按钮*/
 .sm-btn{
   min-width: 60px!important;
-  width: 60px!important;
+  width: 60px;
   height: 30px;
   line-height: 30px!important;
 }
@@ -32,7 +32,12 @@
 /*输入框前缀*/
 .input-prefix{
   color: rgb(100,100,100);
+  font-size: 14px;
   margin-right: 10px;
+}
+.input-suffix{
+  margin-left: 10px;
+  color: rgb(100,100,100);
   font-size: 14px;
 }
 /*input和select下划线*/

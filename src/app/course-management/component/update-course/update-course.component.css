@@ -1,4 +1,16 @@
 main{
-    width: 600px;
-    height: 500px;
+    width: 700px;
+    max-height: 700px;
+    padding-bottom: 20px;
+}
+.content{
+    width: 90%;
+    margin: auto;
+}
+.form-item{
+    width: 44%;
+    display: inline-block;
+}
+.sc{
+    margin-left: 10%;
 }

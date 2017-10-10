@@ -2,6 +2,10 @@
   padding: 0;
   margin: 0;
 }
+.app-dialog-content{
+  width: 90%;
+  margin: auto;
+}
 .app-content{
   margin-top: 20px;
   position: relative
