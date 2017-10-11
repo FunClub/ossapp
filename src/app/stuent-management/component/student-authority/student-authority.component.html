@@ -1,3 +1,46 @@
-<p>
-  student-authority works!
-</p>
+<main class="app-main">
+  <div class="content-top white-box border-left base-text">
+    <i class="material-icons">person</i> 学生列表
+  </div>
+  <div class="app-content white-box">
+    <mat-table #table [dataSource]="dataSource">
+      <!-- checked Column -->
+      <ng-container matColumnDef="checked">
+        <mat-header-cell *matHeaderCellDef> 勾选 </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+          <mat-checkbox class="sm-checkbox"></mat-checkbox>
+        </mat-cell>
+      </ng-container>
+      <!-- id Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
+      </ng-container>
+
+      <!-- nickname Column -->
+      <ng-container matColumnDef="nickname">
+        <mat-header-cell *matHeaderCellDef> 姓名 </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.nickname}} </mat-cell>
+      </ng-container>
+
+      <!-- sex Column -->
+      <ng-container matColumnDef="sex">
+        <mat-header-cell *matHeaderCellDef> 性别 </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.sex}} </mat-cell>
+      </ng-container>
+
+      <!-- state Column -->
+      <ng-container matColumnDef="state">
+        <mat-header-cell *matHeaderCellDef> 操作 </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+          <button mat-raised-button class="sm-btn" color="primary">
+            设置
+           </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</main>
