@@ -7,3 +7,7 @@ export class PageRequestModel {
         this.size=10;
     }
 }
+export class PagedData {
+    totalElements:number;
+    content:any;
+}

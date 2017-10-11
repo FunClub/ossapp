@@ -5,4 +5,39 @@
         <button mat-icon-button  (click)="updateCourse()"><i class="material-icons">add_circle_outline</i>添加课件</button>
       </div>
   </div>
+  <div class="app-content white-box">
+    <app-busy [busy]="busy" [msg]="'数据加载中...'"></app-busy>
+    <mat-table #table [dataSource]="subDataSource">
+      <ng-container matColumnDef="checked">
+        <mat-header-cell *matHeaderCellDef> 勾选 </mat-header-cell>
+        <mat-cell *matCellDef="let item"><mat-checkbox color="primary" class="sm-checkbox"></mat-checkbox></mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> 名称 </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="getCourse">
+        <mat-header-cell *matHeaderCellDef> 获得学分 </mat-header-cell>
+        <mat-cell *matCellDef="let item">{{item.getCourse}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="batch">
+        <mat-header-cell *matHeaderCellDef> 学院 </mat-header-cell>
+        <mat-cell *matCellDef="let item">{{item.batch}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="operation">
+        <mat-header-cell *matHeaderCellDef> 操作 </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+          <button mat-raised-button class="sm-btn" color="primary">
+           修改
+          </button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedSubColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedSubColumns;"></mat-row>
+    </mat-table>
+   
+  </div>
 </main>
