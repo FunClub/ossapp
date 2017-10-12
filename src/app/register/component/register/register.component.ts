@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   public validateControl:FormControl;
   public nicknameControl:FormControl;
   private EMAIL_REGEX = /^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/;
-  constructor(private formBuilder:FormBuilder,private api:RegisterApiModel,private registerService:RegisterService
+  constructor(private formBuilder:FormBuilder,public api:RegisterApiModel,private registerService:RegisterService
   ,private toastsManager:ToastsManager
   ) {
 
